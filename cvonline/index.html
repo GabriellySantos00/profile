@@ -112,6 +112,7 @@ body::after {
   line-height: .95;
 }
 
+
 .hero-text,
 .text-muted {
   color: #cfc8d8 !important;
@@ -272,6 +273,48 @@ body::after {
   transform: translateY(-3px);
 }
 
+.section-area {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 800;
+  color: #fff;
+}
+
+.typing-text {
+  color: #d8bc7b;
+}
+
+.cursor {
+  color: #d8bc7b;
+  animation: blink .8s infinite;
+}
+
+.section-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 25px 60px rgba(0,0,0,.45);
+}
+
+.cta-section {
+  text-align: center;
+  padding: 90px 30px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 
 @keyframes floatingLight {
   from {
@@ -365,193 +408,221 @@ body::after {
   </nav>
 
 
-  <main class="container my-5 flex-grow-1">
+ <main class="container my-5 flex-grow-1">
 
-    <section class="hero-art rounded-5 shadow-lg p-5 mb-5">
-      <div class="row align-items-center g-5">
+  <!-- HERO -->
+  <section class="section-area hero-art p-5">
+    <div class="row align-items-center g-5">
 
-        <div class="col-md-8">
-          <p class="text-uppercase fw-semibold mb-3 hero-label">
-            Portfólio Acadêmico
-          </p>
+      <div class="col-lg-7">
+        <p class="text-uppercase hero-label mb-3">Portfólio Acadêmico</p>
 
-          <h1 class="hero-title">
-            Gabrielly Santos de Oliveira
-          </h1>
+        <p class="lead mb-2">Olá, eu sou</p>
 
-          <p class="lead hero-text mt-4">
-            Estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web,
-            banco de dados e UX/UI Design. Busco aplicar meus conhecimentos em projetos práticos,
-            unindo organização, lógica e criação de interfaces funcionais.</p>
+        <h1 class="hero-title">
+          Gabrielly Santos de Oliveira
+        </h1>
 
-          <div class="d-flex gap-3 mt-4">
-            <a href="/cvonline/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-4">
-              Ver Portfólio
-            </a>
+        <h2 class="mt-4 fw-bold">
+          Estudante de ADS |
+          <span class="typing-text"></span><span class="cursor">|</span>
+        </h2>
 
-            <a href="/cvonline/contato.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
-              Contato
-            </a>
-          </div>
+        <p class="lead hero-text mt-4">
+          Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web,
+          UX/UI Design e criação de interfaces funcionais, intuitivas e bem estruturadas.
+        </p>
+
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="/cvonline/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-4">
+            Ver Projetos
+          </a>
+
+          <a href="/cvonline/contato.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
+            Contato
+          </a>
         </div>
-
-        <div class="col-md-4 text-center">
-
-          <div class="profile-frame">
-
-            <img src="/cvonline/imagens/eu.jpg" class="img-fluid profile-img" alt="Foto de perfil">
-
-          </div>
-
-        </div>
-
       </div>
-    </section>
 
-   
-    <section class="row g-4 mb-4">
+      <div class="col-lg-5 text-center">
+        <div class="profile-frame">
+          <img src="/cvonline/imagens/eu.jpg" class="img-fluid profile-img" alt="Foto de perfil">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="section-area">
+    <div class="row align-items-center g-5">
 
       <div class="col-lg-5">
-        <div class="card art-card shadow-sm h-100">
+        <img src="/cvonline/imagens/secao-habilidades.png" class="section-img" alt="Imagem de habilidades">
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card art-card">
           <div class="card-body p-4">
-            <h3 class="fw-bold mb-3">
-              <i class=" text-primary me-2"></i>
-              Objetivo Profissional
-            </h3>
+            <p class="hero-label text-uppercase">Competências</p>
+            <h2 class="section-title mb-4">Habilidades</h2>
+
+            <h6 class="fw-bold text-muted">Hard Skills</h6>
+            <div class="mb-4">
+              <span class="badge me-2 mb-2">HTML5</span>
+              <span class="badge me-2 mb-2">CSS3</span>
+              <span class="badge me-2 mb-2">JavaScript</span>
+              <span class="badge me-2 mb-2">Bootstrap</span>
+              <span class="badge me-2 mb-2">React</span>
+              <span class="badge me-2 mb-2">Python</span>
+              <span class="badge me-2 mb-2">MySQL</span>
+              <span class="badge me-2 mb-2">Figma</span>
+            </div>
+
+            <h6 class="fw-bold text-muted">Soft Skills</h6>
+            <div>
+              <span class="badge me-2 mb-2">Organização</span>
+              <span class="badge me-2 mb-2">Criatividade</span>
+              <span class="badge me-2 mb-2">Trabalho em Equipe</span>
+              <span class="badge me-2 mb-2">Comunicação</span>
+              <span class="badge me-2 mb-2">Resolução de Problemas</span>
+              <span class="badge me-2 mb-2">Aprendizado Contínuo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JORNADA -->
+  <section class="section-area">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-7">
+        <div class="card art-card">
+          <div class="card-body p-4">
+            <p class="hero-label text-uppercase">Formação e experiência</p>
+            <h2 class="section-title mb-4">Minha Jornada</h2>
+
+            <div class="accordion accordion-flush" id="accordionCurriculo">
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#experiencia">
+                    <i class="bi bi-briefcase-fill me-2"></i>
+                    Experiência Profissional
+                  </button>
+                </h2>
+
+                <div id="experiencia" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
+                  <div class="accordion-body">
+                    <h5 class="fw-bold">Aprendiz em Logística — CAIO</h5>
+                    <p class="text-muted">
+                      Atuei por 2 anos na área de logística, realizando controle de materiais,
+                      registros em sistema e análise de inconsistências.
+                    </p>
+
+                    <h5 class="fw-bold mt-4">Registro Empregatício — Usina São Manuel SA</h5>
+                    <ul class="text-muted mb-0">
+                      <li>Comprovação de assiduidade</li>
+                      <li>Desenvolvimento front-end e back-end</li>
+                      <li>Manipulação de banco de dados</li>
+                      <li>Elaboração de projetos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#formacao">
+                    <i class="bi bi-mortarboard-fill me-2"></i>
+                    Formação Acadêmica
+                  </button>
+                </h2>
+
+                <div id="formacao" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
+                  <div class="accordion-body">
+                    <h5 class="fw-bold">Técnico em Análise e Desenvolvimento de Sistemas</h5>
+                    <p class="text-muted">SENAI — Em andamento</p>
+
+                    <ul class="text-muted mb-0">
+                      <li>Lógica de programação</li>
+                      <li>Desenvolvimento web</li>
+                      <li>Front-end e back-end</li>
+                      <li>Banco de dados</li>
+                      <li>UX/UI Design</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <img src="/cvonline/imagens/secao-jornada.png" class="section-img" alt="Imagem sobre formação e experiência">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MIM -->
+  <section class="section-area">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-5">
+        <img src="/cvonline/imagens/secao-sobre.png" class="section-img" alt="Imagem sobre mim">
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card art-card">
+          <div class="card-body p-4">
+            <p class="hero-label text-uppercase">Sobre mim</p>
+            <h2 class="section-title mb-4">Mais do que código, crio experiências.</h2>
+
+            <p class="text-muted">
+              Sou estudante de Análise e Desenvolvimento de Sistemas e tenho interesse em desenvolvimento web,
+              UX/UI Design e criação de interfaces intuitivas.
+            </p>
 
             <p class="text-muted mb-0">
-              Busco minha primeira oportunidade na área de tecnologia para aplicar os conhecimentos
-              desenvolvidos durante minha formação em Análise e Desenvolvimento de Sistemas,
-              contribuindo com projetos, aprendendo continuamente e evoluindo profissionalmente.
+              Gosto de transformar ideias em projetos funcionais, unindo tecnologia, organização,
+              criatividade e atenção aos detalhes. Durante minha formação, desenvolvi projetos acadêmicos
+              envolvendo interfaces web, banco de dados e aplicações responsivas.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-7">
-        <div class="card art-card shadow-sm h-100">
-          <div class="card-body p-4">
-            <h3 class="fw-bold mb-3">
-              <i class=" text-primary me-2"></i>
-              Habilidades
-            </h3>
+    </div>
+  </section>
 
-            <h6 class="fw-bold text-muted">Hard Skills</h6>
-            <div class="mb-4">
-              <span class="badge rounded-pill me-2 mb-2 p-2">HTML5</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">CSS3</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">JavaScript</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Bootstrap</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">React</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Python</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">MySQL</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Figma</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">UI/UX Design</span>
-            </div>
+  <!-- CTA PROJETOS -->
+  <section class="hero-art cta-section">
+    <p class="hero-label text-uppercase">Projetos</p>
 
-            <h6 class="fw-bold text-muted">Soft Skills</h6>
-            <div>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Organização</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Criatividade</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Trabalho em Equipe</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Comunicação</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Resolução de Problemas</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Adaptabilidade</span>
-              <span class="badge rounded-pill me-2 mb-2 p-2">Aprendizado Contínuo</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <h2 class="section-title mb-4">
+      Vamos além da teoria.
+    </h2>
 
-    </section>
+    <p class="lead hero-text mx-auto mb-4" style="max-width: 760px;">
+      Conheça os projetos que desenvolvi durante minha formação e veja na prática minhas habilidades
+      em desenvolvimento web, banco de dados e UX/UI Design.
+    </p>
 
-    <section class="mb-5">
-      <div class="card art-card shadow-sm h-100">
-        <div class="card-body p-4">
+    <a href="/cvonline/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-5">
+      Explorar Projetos
+    </a>
+  </section>
 
-
-          <div class="accordion accordion-flush" id="accordionCurriculo">
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#experiencia">
-                  <i class="bi bi-briefcase-fill me-2 accordion-icon"></i>
-                  Experiência Profissional
-                </button>
-              </h2>
-
-              <div id="experiencia" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
-
-                <div class="accordion-body">
-                  <h5 class="fw-bold">Registro Empregatício — Usina São Manuel SA</h5>
-
-              
-                  <ul class="text-muted mb-0">
-                    <li>Comprovação de Assiduidade</li>
-                    <li>Desenvolvimento Front-end e Back-end</li>
-                    <li>Manipulação de Banco de Dados</li>
-                    <li>Elaboração de Projetos</li>
-                  </ul>
-                </div>
-
-
-
-                <div class="accordion-body">
-                  <h5 class="fw-bold">Aprendiz em Logística — CAIO</h5>
-
-                  <p class="text-muted">
-                    Atuei por 2 anos na área de logística, realizando entrada e controle de materiais no sistema,
-                    além da identificação e correção de inconsistências em ordens de serviço e contagem de materiais.
-                  </p>
-
-                  <ul class="text-muted mb-0">
-                    <li>Controle e conferência de materiais.</li>
-                    <li>Registro de informações em sistema.</li>
-                    <li>Análise de inconsistências em ordens de serviço.</li>
-                    <li>Desenvolvimento de organização, responsabilidade e atenção aos detalhes.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#formacao">
-                  <i class="bi bi-mortarboard-fill me-2 accordion-icon"></i>
-                  Formação Acadêmica
-                </button>
-              </h2>
-
-              <div id="formacao" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
-
-                <div class="accordion-body">
-                  <h5 class="fw-bold">Técnico em Análise e Desenvolvimento de Sistemas</h5>
-
-                  <p class="text-muted">
-                    SENAI — Em andamento
-                  </p>
-
-                  <ul class="text-muted mb-0">
-                    <li>Lógica de Programação</li>
-                    <li>Desenvolvimento Web</li>
-                    <li>Front-end e Back-end</li>
-                    <li>Banco de Dados</li>
-                    <li>UX/UI Design</li>
-                    <li>Projetos acadêmicos com HTML, CSS, JavaScript, React, Python e MySQL</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
+</main>
 
 
 
@@ -600,7 +671,46 @@ body::after {
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const palavras = [
+    "Desenvolvedora Front-end",
+    "UX/UI Designer",
+    "Desenvolvedora Web"
+  ];
 
+  let palavraIndex = 0;
+  let letraIndex = 0;
+  let apagando = false;
+
+  const typingText = document.querySelector(".typing-text");
+
+  function digitar() {
+    const palavraAtual = palavras[palavraIndex];
+
+    if (!apagando) {
+      typingText.textContent = palavraAtual.substring(0, letraIndex + 1);
+      letraIndex++;
+
+      if (letraIndex === palavraAtual.length) {
+        apagando = true;
+        setTimeout(digitar, 1600);
+        return;
+      }
+    } else {
+      typingText.textContent = palavraAtual.substring(0, letraIndex - 1);
+      letraIndex--;
+
+      if (letraIndex === 0) {
+        apagando = false;
+        palavraIndex = (palavraIndex + 1) % palavras.length;
+      }
+    }
+
+    setTimeout(digitar, apagando ? 45 : 80);
+  }
+
+  digitar();
+</script>
 </body>
 
 </html>
