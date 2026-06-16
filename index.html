@@ -1,10 +1,1295 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/profile/cvonline/index.html">
-  <title>Redirecionando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+ body {
+    background:
+        radial-gradient(circle at 75% 15%,
+            rgba(78, 52, 115, .18),
+            transparent 30%),
+
+        radial-gradient(circle at 20% 60%,
+            rgba(255, 255, 255, .03),
+            transparent 25%),
+
+        radial-gradient(circle at 60% 100%,
+            rgba(185, 150, 84, .05),
+            transparent 35%),
+
+        linear-gradient(
+            180deg,
+            #050508 0%,
+            #08070d 40%,
+            #0b0911 100%
+        );
+
+    color: #f5f5f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 520px;
+    height: 520px;
+
+    top: 8%;
+    right: 5%;
+
+    background: rgba(78, 52, 115, .16);
+
+    filter: blur(140px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    animation: floatingLight 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    bottom: 5%;
+    left: 8%;
+
+    background: rgba(185, 150, 84, .06);
+
+    filter: blur(130px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    animation: floatingLight2 14s ease-in-out infinite alternate;
+}
+  /* NAVBAR */
+  .navbar {
+    background: rgba(5, 5, 8, .78) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  /* HERO */
+  .hero-art {
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .10);
+    backdrop-filter: blur(18px);
+    border-radius: 36px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp .9s ease both;
+  }
+
+  .hero-art::before {
+    content: "";
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    right: -120px;
+    top: -130px;
+    border-radius: 50%;
+    background: rgba(78, 52, 115, .28);
+    filter: blur(115px);
+    animation: pulseGlow 5s ease-in-out infinite alternate;
+  }
+
+  .hero-art::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: -100px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, .10);
+    filter: blur(90px);
+  }
+
+  .hero-art * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-label {
+    color: #d8bc7b;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .hero-title {
+    color: #ffffff;
+    font-size: clamp(3rem, 7vw, 3rem);
+    font-weight: 800;
+    line-height: .95;
+  }
+
+
+  .hero-text,
+  .text-muted {
+    color: #cfc8d8 !important;
+  }
+
+  .profile-frame {
+    display: inline-block;
+    position: relative;
+    animation: floatImg 4s ease-in-out infinite;
+  }
+
+  .profile-frame::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, .30);
+  }
+
+  .profile-img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(212, 175, 55, .35);
+    box-shadow:
+      0 0 35px rgba(78, 52, 115, .25),
+      0 0 30px rgba(212, 175, 55, .10),
+      0 22px 55px rgba(0, 0, 0, .45);
+  }
+
+  .art-card {
+    background: rgba(255, 255, 255, .045) !important;
+    border: 1px solid rgba(255, 255, 255, .10) !important;
+    color: #f5f5f5 !important;
+    border-radius: 30px !important;
+    backdrop-filter: blur(16px);
+    transition: .35s ease;
+    animation: fadeUp .9s ease both;
+  }
+
+  .art-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, .35) !important;
+    box-shadow:
+      0 0 35px rgba(78, 52, 115, .15),
+      0 25px 55px rgba(0, 0, 0, .38);
+  }
+
+  .art-card h3,
+  .art-card h4,
+  .art-card h5,
+  .art-card h6 {
+    color: #ffffff !important;
+  }
+
+
+  .badge {
+    background: rgba(255, 255, 255, .04) !important;
+    color: #f5f5f5 !important;
+    border: 1px solid rgba(212, 175, 55, .34);
+    border-radius: 999px;
+    padding: 8px 14px !important;
+    font-weight: 500;
+    transition: .3s;
+  }
+
+  .badge:hover {
+    border-color: #d8bc7b;
+    box-shadow: 0 0 18px rgba(212, 175, 55, .20);
+  }
+
+  .skills-category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .skill-category-card {
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 30px;
+    padding: 28px;
+    backdrop-filter: blur(16px);
+    transition: .35s ease;
+  }
+
+  .skill-category-card+.skill-category-card {
+    margin-top: 20px;
+  }
+
+  .skill-category-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, .35);
+    box-shadow:
+      0 0 35px rgba(78, 52, 115, .15),
+      0 25px 55px rgba(0, 0, 0, .38);
+  }
+
+  .skill-category-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .skill-category-title i {
+    color: #d8bc7b;
+    font-size: 1.8rem;
+  }
+
+  .skill-category-title h5 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .skills-category-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ffffff, #d8bc7b);
+    color: #050508;
+    border: none;
+    transition: .3s;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #d8bc7b, #b68b42);
+    color: #050508;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(212, 175, 55, .28);
+  }
+
+  .btn-outline-light {
+    border: 1px solid rgba(212, 175, 55, .38);
+    color: #f5f5f5;
+    transition: .3s;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(212, 175, 55, .10);
+    border-color: #d8bc7b;
+    color: #fff;
+  }
+
+  .accordion-item {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, .10) !important;
+  }
+
+  .accordion-button {
+    background: rgba(255, 255, 255, .04) !important;
+    color: #ffffff !important;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background: rgba(212, 175, 55, .08) !important;
+  }
+
+  .accordion-button::after {
+    filter: invert(1);
+  }
+
+  .accordion-body {
+    background: transparent !important;
+    color: #cfc8d8 !important;
+  }
+
+  .portfolio-footer {
+    margin-top: 90px;
+    padding: 45px 0;
+    background: rgba(5, 5, 8, .78);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(14px);
+  }
+
+  .footer-title {
+    color: #ffffff;
+  }
+
+  .footer-subtitle,
+  .footer-copy {
+    color: #aaa3b8;
+  }
+
+  .footer-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+    margin: 28px 0;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-social a {
+    color: #d8bc7b;
+    text-decoration: none;
+    transition: .3s;
+  }
+
+  .footer-social a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  .section-area {
+    min-height: 80vh;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .typing-text {
+    color: #d8bc7b;
+  }
+
+  .cursor {
+    color: #d8bc7b;
+    animation: blink .8s infinite;
+  }
+
+  .section-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 90px 30px;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+
+  @keyframes floatingLight {
+    from {
+      transform: translate(0, 0) scale(1);
+    }
+
+    to {
+      transform: translate(-80px, 60px) scale(1.15);
+    }
+  }
+
+  @keyframes floatingLight2 {
+    from {
+      transform: translate(0, 0) scale(1);
+    }
+
+    to {
+      transform: translate(70px, -50px) scale(1.1);
+    }
+  }
+
+  @keyframes pulseGlow {
+    from {
+      opacity: .45;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: .85;
+      transform: scale(1.12);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatImg {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  .creative-box {
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 30px;
+    padding: 32px;
+    backdrop-filter: blur(16px);
+    animation: fadeUp .9s ease both;
+  }
+
+  .creative-title {
+    color: #fff;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .creative-heading {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .creative-subtitle {
+    color: #cfc8d8;
+    max-width: 560px;
+    margin-bottom: 30px;
+  }
+
+  .creative-gallery-pro {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    gap: 14px;
+  }
+
+  .art-preview {
+    position: relative;
+    border: 0;
+    padding: 0;
+    border-radius: 26px;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, .45);
+  }
+
+  .art-main {
+    grid-row: span 2;
+  }
+
+  .art-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .6s ease;
+    filter: contrast(1.05) brightness(.88);
+  }
+
+  .art-preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent 60%);
+  }
+
+  .art-preview span {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    z-index: 2;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+
+  .art-preview:hover img {
+    transform: scale(1.08);
+    filter: contrast(1.12) brightness(1);
+  }
+
+  .art-preview:hover {
+    outline: 1px solid rgba(212, 175, 55, .45);
+    box-shadow:
+      0 0 35px rgba(78, 52, 115, .22),
+      0 28px 65px rgba(0, 0, 0, .55);
+  }
+
+  .art-preview:hover span::after {
+    content: " • ampliar";
+    color: #d8bc7b;
+    font-weight: 500;
+  }
+
+  .art-preview span {
+    position: absolute;
+    left: 20px;
+    bottom: 18px;
+    z-index: 2;
+    color: rgba(255, 255, 255, .9);
+    font-size: .9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: .3s;
+  }
+
+  .art-preview:hover span {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .creative-gallery-pro {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .art-preview,
+    .art-main {
+      height: 260px;
+      grid-row: auto;
+    }
+  }
+
+  .art-modal {
+    background: rgba(5, 5, 8, .92);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 28px;
+    overflow: hidden;
+    backdrop-filter: blur(18px);
+  }
+
+  .art-modal img {
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    padding: 0 24px 24px;
+  }
+
+  .modal-backdrop.show {
+    opacity: .85;
+  }
+
+  @media (max-width: 768px) {
+    .creative-gallery-pro {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .main-art {
+      grid-row: auto;
+    }
+
+    .art-preview {
+      height: 260px;
+    }
+  }
+
+  .bi-file-earmark-person {
+    color: #d8bc7b;
+  }
+
+  .curriculo-card .bi-file-earmark-person {
+    color: #d8bc7b;
+  }
+
+  .curriculo-card h5 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .curriculo-card p {
+    font-size: .95rem;
+  }
+
+  .cta-projects {
+    padding: 60px 0 40px;
+  }
+
+  .cta-card {
+    position: relative;
+    text-align: center;
+    padding: 70px 40px;
+    border-radius: 40px;
+
+    background:
+      radial-gradient(circle at 20% 20%, rgba(212, 175, 55, .08), transparent 30%),
+      radial-gradient(circle at 80% 80%, rgba(78, 52, 115, .18), transparent 35%),
+      rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .10);
+    backdrop-filter: blur(18px);
+    overflow: hidden;
+  }
+
+  .cta-title {
+    color: #fff;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+
+  .cta-text {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    color: #cfc8d8;
+    font-size: 1.05rem;
+  }
+
+  .cta-card .btn {
+    transition: .35s ease;
+  }
+
+  .cta-card .btn:hover {
+    transform: translateY(-4px);
+  }
+
+  .navbar-brand {
+    color: #f1e2c0e7 !important;
+  }
+  @media (max-width: 992px) {
+  .section-area {
+    padding: 60px 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-art {
+    padding: 32px 22px !important;
+  }
+
+  .hero-title {
+    font-size: 2.7rem;
+  }
+
+  .profile-img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .carousel-item img {
+    height: 380px !important;
+    max-height: 380px;
+  }
+
+  .carousel-caption {
+    position: static;
+    transform: none;
+    margin: 18px auto 0;
+    max-width: 100%;
+  }
+
+  .creative-gallery-pro {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .art-main {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .art-preview {
+    height: 230px;
+  }
+}
+
+@media (max-width: 576px) {
+  main.container {
+    padding-inline: 18px;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title,
+  .creative-heading,
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .skill-category-card,
+  .art-card,
+  .curriculo-card,
+  .cta-card {
+    padding: 22px !important;
+    border-radius: 24px !important;
+  }
+
+  .badge {
+    font-size: .8rem;
+    padding: 7px 11px !important;
+  }
+
+  .carousel-item img {
+    height: 260px !important;
+    max-height: 260px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 42px;
+  }
+
+  .carousel-arrow,
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .creative-gallery-pro {
+    grid-template-columns: 1fr;
+  }
+
+  .art-main {
+    grid-column: auto;
+  }
+
+  .art-preview {
+    height: 260px;
+  }
+
+  .footer-social,
+  .footer-links {
+    justify-content: center;
+  }
+}
+</style>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/index.html">GS</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre Mim</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio.html">Projetos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contato.html">Contato</a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+          <li class="nav-item ms-lg-3">
+            <a href="https://github.com/GabriellySantos00" target="_blank" class="btn btn-outline-light rounded-pill">
+              <i class="bi bi-github me-2"></i>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="container my-5 flex-grow-1">
+
+    <!-- HERO -->
+    <section id="topo" class="section-area hero-art p-5">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+          <!-- <p class="text-uppercase hero-label mb-3">Portfólio Acadêmico</p> -->
+
+          <p class="lead mb-2">Olá, eu sou</p>
+
+          <h1 class="hero-title">
+            Gabrielly Santos de Oliveira
+          </h1>
+
+          <h3 class="mt-4 fw-bold">
+            Estudante de ADS |
+            <span class="typing-text"></span><span class="cursor">|</span>
+          </h3>
+
+          <p class="lead hero-text mt-4">
+            Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web,
+            UX/UI Design e criação de interfaces funcionais, intuitivas e bem estruturadas.
+          </p>
+
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-4">
+              Ver Projetos
+            </a>
+
+            <a href="/contato.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
+              Contato
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <div class="profile-frame">
+            <img src="/imagens/eu.jpg" class="img-fluid profile-img" alt="Foto de perfil">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- JORNADA + HABILIDADES -->
+    <section id="jornada" class="section-area profile-section">
+      <div class="row align-items-start g-5">
+
+        <!-- JORNADA -->
+        <div class="col-lg-5">
+
+          <p class="hero-label text-uppercase">Formação e Experiência</p>
+
+
+          <div class="card art-card">
+            <div class="card-body p-4">
+
+              <div class="accordion accordion-flush" id="accordionCurriculo">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#experiencia">
+                      <i class="bi bi-briefcase-fill me-2"></i>
+                      Experiência Profissional
+                    </button>
+                  </h2>
+
+                  <div id="experiencia" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
+                    <div class="accordion-body">
+                      <h5 class="fw-bold">Aprendiz em Logística — CAIO</h5>
+
+                      <p class="text-muted">
+                        Atuei por 2 anos na área de logística, realizando controle de materiais,
+                        registros em sistema e análise de inconsistências.
+                      </p>
+
+                      <h5 class="fw-bold mt-4">Registro Empregatício — Usina São Manuel SA</h5>
+
+                      <ul class="text-muted mb-0">
+                        <li>Comprovação de assiduidade</li>
+                        <li>Desenvolvimento front-end e back-end</li>
+                        <li>Manipulação de banco de dados</li>
+                        <li>Elaboração de projetos</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#formacao">
+                      <i class="bi bi-mortarboard-fill me-2"></i>
+                      Formação Acadêmica
+                    </button>
+                  </h2>
+
+                  <div id="formacao" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
+                    <div class="accordion-body">
+                      <h5 class="fw-bold">Técnico em Análise e Desenvolvimento de Sistemas</h5>
+
+                      <p class="text-muted">SENAI — Em andamento</p>
+
+                      <ul class="text-muted mb-0">
+                        <li>Lógica de programação</li>
+                        <li>Desenvolvimento web</li>
+                        <li>Front-end e back-end</li>
+                        <li>Banco de dados</li>
+                        <li>UX/UI Design</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CURRÍCULO -->
+          <div class="mt-4">
+            <div class="card art-card curriculo-card">
+              <div class="card-body p-4 text-center">
+
+                <i class="bi bi-file-earmark-person fs-1 mb-3 d-block"></i>
+
+                <h5 class="fw-bold">Currículo Profissional</h5>
+
+                <p class="text-muted mb-4">
+                  Visualize ou faça o download da versão completa do meu currículo.
+                </p>
+
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                  <a href="gabrielly_oliveira_curriculo.pdf" target="_blank"
+                    class="btn btn-outline-light rounded-pill">
+                    <i class="bi bi-eye me-2"></i>
+                    Visualizar
+                  </a>
+
+                  <a href="gabrielly_oliveira_curriculo.pdf" download class="btn btn-primary rounded-pill">
+                    <i class="bi bi-download me-2"></i>
+                    Baixar PDF
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- HABILIDADES -->
+        <div class="col-lg-7">
+
+          <p class="hero-label text-uppercase">Competências</p>
+
+
+
+          <div class="skill-category-card mb-4">
+            <div class="skill-category-title">
+              <i class="bi"></i>
+              <h5>Hard Skills</h5>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Bootstrap</span>
+              <span class="badge">React</span>
+              <span class="badge">Python</span>
+              <span class="badge">Flask</span>
+              <span class="badge">MySQL</span>
+              <span class="badge">Figma</span>
+              <span class="badge">UX/UI Design</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title">
+              <i class="bi"></i>
+              <h5>Soft Skills</h5>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge">Organização</span>
+              <span class="badge">Criatividade</span>
+              <span class="badge">Atenção aos Detalhes</span>
+              <span class="badge">Trabalho em Equipe</span>
+              <span class="badge">Comunicação</span>
+              <span class="badge">Resolução de Problemas</span>
+              <span class="badge">Aprendizado Contínuo</span>
+              <span class="badge">Proatividade</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- SOBRE MIM + CRIATIVIDADE -->
+    <section id="sobre" class="section-area">
+      <div class="row align-items-center g-5">
+
+        <!-- LADO ESQUERDO: SOBRE MIM -->
+        <div class="col-lg-5">
+          <div class="card art-card h-100">
+            <div class="card-body p-4 p-lg-5">
+
+              <p class="hero-label text-uppercase">
+                Sobre mim
+              </p>
+
+              <p class="text-muted">
+                Sou uma pessoa criativa, observadora e atenta aos detalhes. Sempre gostei de transformar ideias em algo
+                visual, buscando unir estética, organização e significado em tudo o que desenvolvo.
+              </p>
+
+              <p class="text-muted">
+                Acredito que a criatividade vai além da inspiração: ela está na forma como enxergamos problemas,
+                exploramos possibilidades e construímos soluções. Essa maneira de pensar me acompanha tanto nos projetos
+                que desenvolvo quanto nas atividades criativas que fazem parte da minha trajetória.
+              </p>
+
+              <p class="text-muted mb-0">
+                Estou sempre em busca de aprender, evoluir e aperfeiçoar minhas habilidades, valorizando processos que
+                unem sensibilidade, dedicação e atenção aos detalhes.
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+
+          <p class="hero-label text-uppercase">Expressão Criativa</p>
+
+          <h2 class="creative-heading">
+            Minha criatividade<br>
+            além da tecnologia
+          </h2>
+
+          <p class="creative-subtitle">
+            Muito antes da programação, a criatividade já fazia parte da minha vida.
+            Através do desenho, da escrita e de projetos artesanais, desenvolvi um olhar
+            atento aos detalhes, à estética e à forma como as pessoas se conectam com aquilo que criamos.
+          </p>
+
+          <div class="creative-gallery-pro">
+
+            <button class="art-preview art-main" data-bs-toggle="modal" data-bs-target="#modalArte1">
+              <img src="/imagens/desenho1.jpg" alt="Desenho feito à mão">
+              <span>Visualizar obra</span>
+            </button>
+
+            <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte2">
+              <img src="/imagens/desenho2.jpg" alt="Desenho feito à mão">
+              <span>Visualizar obra</span>
+            </button>
+
+            <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte3">
+              <img src="/imagens/desenho3.jpg" alt="Desenho feito à mão">
+              <span>Visualizar obra</span>
+            </button>
+
+            <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte4">
+              <img src="/imagens/desenho4.jpg" alt="Desenho feito à mão">
+              <span>Visualizar obra</span>
+            </button>
+
+            <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte5">
+              <img src="/imagens/desenho5.jpg" alt="Desenho feito à mão">
+              <span>Visualizar obra</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA PROJETOS -->
+    <section class="cta-projects">
+
+      <div class="cta-card">
+
+        <p class="hero-label text-uppercase">
+          Próximo passo
+        </p>
+
+        <h2 class="cta-title">
+          Conheça meus projetos
+        </h2>
+
+        <p class="cta-text">
+          Explore aplicações web, sistemas acadêmicos, projetos de UX/UI Design
+          e soluções desenvolvidas durante minha formação em Análise e Desenvolvimento de Sistemas.
+        </p>
+
+        <a href="/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-5">
+
+          Ver Portfólio
+          <i class="bi bi-arrow-right ms-2"></i>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="modal fade" id="modalArte1" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content art-modal">
+          <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
+          <img src="/imagens/desenho1.jpg" alt="Desenho ampliado">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalArte2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content art-modal">
+          <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
+          <img src="/imagens/desenho2.jpg" alt="Desenho ampliado">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalArte3" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content art-modal">
+          <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
+          <img src="/imagens/desenho3.jpg" alt="Desenho ampliado">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalArte4" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content art-modal">
+          <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
+          <img src="/imagens/desenho4.jpg" alt="Desenho ampliado">
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalArte5" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content art-modal">
+          <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
+          <img src="/imagens/desenho5.jpg" alt="Desenho ampliado">
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <footer class="portfolio-footer mt-auto">
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <div class="col-md-6 text-center text-md-start">
+
+          <p class="footer-subtitle mb-0">
+            Portfólio acadêmico de desenvolvimento web e design de interfaces.
+          </p>
+        </div>
+
+
+
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+
+        <p class="footer-copy mb-0">
+          © 2026 Gabrielly Santos de Oliveira
+        </p>
+
+        <div class="footer-social">
+
+          <a href="mailto:gabby28.ap@gmail.com">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+
+          <a href="https://github.com/GabriellySantos00">
+            <i class="bi bi-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/gabrielly--oliveira/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const palavras = [
+      "Desenvolvedora Front-end",
+      "UX/UI Designer",
+      "Desenvolvedora Web"
+    ];
+
+    let palavraIndex = 0;
+    let letraIndex = 0;
+    let apagando = false;
+
+    const typingText = document.querySelector(".typing-text");
+
+    function digitar() {
+      const palavraAtual = palavras[palavraIndex];
+
+      if (!apagando) {
+        typingText.textContent = palavraAtual.substring(0, letraIndex + 1);
+        letraIndex++;
+
+        if (letraIndex === palavraAtual.length) {
+          apagando = true;
+          setTimeout(digitar, 1600);
+          return;
+        }
+      } else {
+        typingText.textContent = palavraAtual.substring(0, letraIndex - 1);
+        letraIndex--;
+
+        if (letraIndex === 0) {
+          apagando = false;
+          palavraIndex = (palavraIndex + 1) % palavras.length;
+        }
+      }
+
+      setTimeout(digitar, apagando ? 45 : 80);
+    }
+
+    digitar();
+
+  </script>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("beforeunload", function () {
+      window.scrollTo(0, 0);
+    });
+
+    window.addEventListener("load", function () {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
 </body>
+
 </html>
