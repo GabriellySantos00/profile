@@ -127,6 +127,37 @@
         background-color: #d8bc7b !important;
     }
 
+    .carousel-arrow {
+        width: 60px;
+        height: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: rgba(5, 5, 8, .85);
+
+        border: 1px solid rgba(212, 175, 55, .25);
+
+        color: #fff;
+
+        font-size: 1.6rem;
+
+        transition: .3s;
+    }
+
+    .carousel-arrow:hover {
+        transform: scale(1.00);
+
+        background: rgba(150, 70, 255, 0);
+
+        border-color: #d8bc7b9e;
+
+        box-shadow: 0 0 25px rgba(150, 70, 255, .25);
+    }
+
     .btn-primary {
         background: linear-gradient(135deg, #ffffff, #d8bc7b);
         color: #050508;
@@ -282,45 +313,175 @@
             transform: translateY(0);
         }
     }
+
+    .navbar-brand {
+        color: #f1e2c0e7 !important;
+    }
+    @media (max-width: 992px) {
+  main.container {
+    padding-inline: 18px;
+  }
+
+  .page-title {
+    font-size: 2.4rem;
+  }
+
+  .carousel-item img {
+    height: 390px !important;
+    max-height: 390px;
+    object-fit: contain;
+  }
+
+  .carousel-caption {
+    position: static;
+    display: block !important;
+    transform: none;
+    margin: 18px auto 0;
+    max-width: 100%;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 48px;
+  }
+
+  .carousel-arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+
+  .modal-dialog {
+    margin: 16px;
+  }
+
+  .modal-body img {
+    max-height: 300px;
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: .95rem;
+  }
+
+  main.container {
+    margin-top: 32px !important;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .text-center.mb-4 p {
+    font-size: .9rem;
+  }
+
+  .carousel-item img {
+    height: 240px !important;
+    max-height: 240px;
+  }
+
+  .carousel-caption {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: .9rem;
+  }
+
+  .carousel-indicators {
+    bottom: -18px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-figma,
+  .btn-outline-light {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-content {
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-body h4 {
+    font-size: 1.15rem;
+  }
+
+  .portfolio-footer {
+    margin-top: 50px;
+    padding: 35px 0;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
 </style>
 
 <body class="d-flex flex-column min-vh-100">
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/cvonline/index.html">Meu Portfólio</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/cvonline/index.html">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" href="/cvonline/portfolio.html">Portfólio</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/cvonline/contato.html">Contato</a>
-          </li>
-
-          <li class="nav-item ms-lg-3">
-          <li class="nav-item ms-lg-3">
-            <a href="https://github.com/GabriellySantos00" target="_blank" class="btn btn-outline-light rounded-pill">
-              <i class="bi bi-github me-2"></i>
-              GitHub
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/cvonline/index.html">GS
             </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-   
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/cvonline/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cvonline/index.html#sobre">
+                            Sobre Mim
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cvonline/portfolio.html">Projetos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cvonline/contato.html">Contato</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://github.com/GabriellySantos00" target="_blank"
+                            class="btn btn-outline-light rounded-pill">
+                            <i class="bi bi-github me-2"></i>
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <main class="container my-5 flex-grow-1">
 
         <div class="text-center mb-4">
@@ -354,11 +515,11 @@
 
                     <div class="carousel-inner rounded">
 
-                   
+
                         <!-- Projeto 2 -->
                         <div class="carousel-item active">
                             <img src="/cvonline/imagens/inyoureyes.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="In Your Eyes">
+                                style="object-fit: contain;" alt="In Your Eyes">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">In Your Eyes</h3>
@@ -373,7 +534,7 @@
                         <!-- Projeto 3 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/gameon.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="GameOn">
+                                style="object-fit: contain;" alt="GameOn">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">GameOn</h3>
@@ -387,7 +548,7 @@
                         <!-- Projeto 4 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/aviacao.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="Portal de Voo">
+                                style="object-fit: contain;"alt="Portal de Voo">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">Portal de Voo</h3>
@@ -404,7 +565,7 @@
                         <!-- Projeto 5 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/movietracker.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="MovieTracker">
+                                style="object-fit: contain;" alt="MovieTracker">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">MovieTracker</h3>
@@ -418,7 +579,7 @@
                         <!-- Projeto 6 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/quitanda.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="Quitanda do Tomate Cru">
+                                style="object-fit: contain;" alt="Quitanda do Tomate Cru">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">Quitanda do Tomate Cru</h3>
@@ -433,7 +594,7 @@
                         <!-- Projeto 7 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/gestaoestoque.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="Sistema de Gestão de Estoque">
+                               style="object-fit: contain;" alt="Sistema de Gestão de Estoque">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">Sistema de Gestão de Estoque</h3>
@@ -448,7 +609,7 @@
                         <!-- Projeto 8 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/gestaoalunos.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="Sistema de Gestão de Alunos">
+                                style="object-fit: contain;" alt="Sistema de Gestão de Alunos">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">Sistema de Gestão de Alunos</h3>
@@ -462,7 +623,7 @@
                         <!-- Projeto 9 -->
                         <div class="carousel-item">
                             <img src="/cvonline/imagens/controle-financas.png" class="d-block w-100"
-                                style="height: 560px; object-fit: contain;" alt="Controle de Finanças Pessoais">
+                                style="object-fit: contain;" alt="Controle de Finanças Pessoais">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h3 class="fw-bold">Controle de Finanças Pessoais</h3>
@@ -480,12 +641,20 @@
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortfolio"
                         data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+
+                        <div class="carousel-arrow">
+                            <i class="bi bi-chevron-left"></i>
+                        </div>
+
                     </button>
 
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselPortfolio"
                         data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+
+                        <div class="carousel-arrow">
+                            <i class="bi bi-chevron-right"></i>
+                        </div>
+
                     </button>
 
                 </div>
@@ -493,7 +662,7 @@
         </div>
     </main>
 
- 
+
 
     <!-- MODAL PROJETO 2 -->
     <div class="modal fade" id="modalProjeto2" tabindex="-1">
@@ -718,7 +887,8 @@
 
                 <div class="modal-body">
 
-                    <img src="/cvonline/imagens/quitanda.png" class="img-fluid rounded mb-4" alt="Quitanda do Tomate Cru">
+                    <img src="/cvonline/imagens/quitanda.png" class="img-fluid rounded mb-4"
+                        alt="Quitanda do Tomate Cru">
 
                     <h4 class="fw-bold">Descrição</h4>
 

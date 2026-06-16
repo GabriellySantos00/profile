@@ -50,7 +50,7 @@
       animation: floatingLight2 11s ease-in-out infinite alternate;
     }
 
-   
+
 
     .navbar {
       background: rgba(5, 5, 8, .78) !important;
@@ -87,7 +87,7 @@
         0 25px 55px rgba(0, 0, 0, .38);
     }
 
-  
+
 
     .contact-label {
       color: #d8bc7b;
@@ -104,14 +104,14 @@
       color: #cfc8d8 !important;
     }
 
-  
+
     .contact-icon {
       color: #d8bc7b;
       font-size: 1.2rem;
       margin-right: 10px;
     }
 
-    
+
     .form-label {
       color: #ffffff;
       font-weight: 500;
@@ -241,7 +241,7 @@
       transform: translateY(-3px);
     }
 
-  
+
     @keyframes floatingLight {
       from {
         transform: translate(0, 0) scale(1);
@@ -273,6 +273,83 @@
         transform: translateY(0);
       }
     }
+
+    .navbar-brand {
+      color: #f1e2c0e7 !important;
+    }
+
+    /* TABLET */
+    @media (max-width: 992px) {
+
+      main.container {
+        padding-inline: 20px;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+      }
+
+      .contact-card {
+        border-radius: 24px;
+      }
+
+      .portfolio-footer {
+        margin-top: 60px;
+      }
+    }
+
+    /* CELULAR */
+    @media (max-width: 576px) {
+
+      main.container {
+        margin-top: 30px !important;
+        padding-inline: 16px;
+      }
+
+      .contact-label {
+        font-size: .8rem;
+        letter-spacing: 1.5px;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .text-muted {
+        font-size: .95rem;
+      }
+
+      .contact-card {
+        border-radius: 22px;
+      }
+
+      .contact-card .card-body {
+        padding: 22px !important;
+      }
+
+      .contact-card h3,
+      .contact-card h4 {
+        font-size: 1.3rem;
+      }
+
+      .form-control {
+        font-size: 16px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+
+      .footer-copy,
+      .footer-subtitle {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -280,7 +357,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="/cvonline/index.html">Meu Portfólio</a>
+      <a class="navbar-brand fw-bold" href="/cvonline/index.html">GS</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
@@ -289,22 +366,29 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
-            <a class="nav-link" href="/cvonline/index.html">Home</a>
+            <a class="nav-link active" href="/cvonline/index.html">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/cvonline/portfolio.html">Portfólio</a>
+            <a class="nav-link" href="/cvonline/index.html#sobre">
+              Sobre Mim
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="/cvonline/contato.html">Contato</a>
+            <a class="nav-link" href="/cvonline/portfolio.html">Projetos</a>
           </li>
 
-          <li class="nav-item ms-lg-3">
+          <li class="nav-item">
+            <a class="nav-link" href="/cvonline/contato.html">Contato</a>
+          </li>
+
           <li class="nav-item ms-lg-3">
             <a href="https://github.com/GabriellySantos00" target="_blank" class="btn btn-outline-light rounded-pill">
+
               <i class="bi bi-github me-2"></i>
               GitHub
+
             </a>
           </li>
         </ul>
