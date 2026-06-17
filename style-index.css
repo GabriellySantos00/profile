@@ -365,6 +365,8 @@ body::after {
 
 .typing-text {
     color: #d8bc7b;
+    /* display: inline-block;
+    white-space: nowrap; */
 }
 
 .cursor {
@@ -732,11 +734,13 @@ body::after {
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        min-height: 2.5rem;
+        line-height: 1.2;
     }
 
     .hero-text {
-        font-size: 0.9rem !important;
+        font-size: 0.93rem !important;
     }
 
     .hero-art .d-flex {
