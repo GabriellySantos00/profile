@@ -111,6 +111,12 @@ body::after {
     font-size: 1.2rem;
 }
 
+.lead {
+    color: #d8bc7b !important;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+}
+
 .hero-art::after {
     content: "";
     position: absolute;
@@ -140,6 +146,8 @@ body::after {
     font-weight: 800;
     line-height: 1;
 }
+
+
 
 
 .hero-text,
@@ -467,8 +475,9 @@ body::after {
 
 .creative-subtitle {
     color: #cfc8d8;
-    max-width: 560px;
+    max-width: 580px;
     margin-bottom: 30px;
+
 }
 
 .creative-gallery-pro {
@@ -556,7 +565,7 @@ body::after {
 }
 
 .art-modal {
-     background: rgba(5, 5, 8, .95) !important;
+    background: rgba(5, 5, 8, .95) !important;
     border: 1px solid rgba(255, 255, 255, .12);
     border-radius: 28px;
     overflow: hidden;
@@ -693,7 +702,23 @@ body::after {
 
 @media (max-width: 576px) {
     main.container {
-        padding-inline: 18px;
+        padding-inline: 20px;
+    }
+
+    .lead {
+        color: #ffffff !important;
+        font-weight: 300;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem !important;
+    }
+
+    .hero-art .btn {
+        font-size: 0.95rem !important;
+        padding: 10px 14px !important;
+    }
+
+    .hero-art {
+        padding: 30px 30px !important;
     }
 
     .navbar-brand {
@@ -701,17 +726,42 @@ body::after {
     }
 
     .hero-title {
-        font-size: 2.3rem;
-        line-height: 1.2;
-    }
-
-    .hero-text {
-        font-size: 1rem;
+        font-size: 1.6rem;
+        line-height: 1.1;
+        word-break: normal;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
+
+    .hero-text {
+        font-size: 0.9rem !important;
+    }
+
+    .hero-art .d-flex {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-art .btn {
+        flex: 1;
+        font-size: 0.78rem;
+        padding: 8px 10px;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .hero-art .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
 
     .section-title,
     .creative-heading,
