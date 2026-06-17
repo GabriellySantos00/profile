@@ -15,33 +15,31 @@
     scroll-behavior: smooth;
   }
 
- body {
+  body {
     background:
-        radial-gradient(circle at 75% 15%,
-            rgba(78, 52, 115, .18),
-            transparent 30%),
+      radial-gradient(circle at 75% 15%,
+        rgba(78, 52, 115, .18),
+        transparent 30%),
 
-        radial-gradient(circle at 20% 60%,
-            rgba(255, 255, 255, .03),
-            transparent 25%),
+      radial-gradient(circle at 20% 60%,
+        rgba(255, 255, 255, .03),
+        transparent 25%),
 
-        radial-gradient(circle at 60% 100%,
-            rgba(185, 150, 84, .05),
-            transparent 35%),
+      radial-gradient(circle at 60% 100%,
+        rgba(185, 150, 84, .05),
+        transparent 35%),
 
-        linear-gradient(
-            180deg,
-            #050508 0%,
-            #08070d 40%,
-            #0b0911 100%
-        );
+      linear-gradient(180deg,
+        #050508 0%,
+        #08070d 40%,
+        #0b0911 100%);
 
     color: #f5f5f5;
     min-height: 100vh;
     overflow-x: hidden;
-}
+  }
 
-body::before {
+  body::before {
     content: "";
     position: fixed;
 
@@ -60,9 +58,9 @@ body::before {
     z-index: -1;
 
     animation: floatingLight 12s ease-in-out infinite alternate;
-}
+  }
 
-body::after {
+  body::after {
     content: "";
 
     position: fixed;
@@ -82,7 +80,8 @@ body::after {
     z-index: -1;
 
     animation: floatingLight2 14s ease-in-out infinite alternate;
-}
+  }
+
   /* NAVBAR */
   .navbar {
     background: rgba(5, 5, 8, .78) !important;
@@ -99,6 +98,8 @@ body::after {
     position: relative;
     overflow: hidden;
     animation: fadeUp .9s ease both;
+    padding: 32px 22px !important;
+    min-height: 70vh;
   }
 
   .hero-art::before {
@@ -112,6 +113,14 @@ body::after {
     background: rgba(78, 52, 115, .28);
     filter: blur(115px);
     animation: pulseGlow 5s ease-in-out infinite alternate;
+  }
+
+  .hero-subtitle {
+    font-size: 1.43rem;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
   }
 
   .hero-art::after {
@@ -139,9 +148,9 @@ body::after {
 
   .hero-title {
     color: #ffffff;
-    font-size: clamp(3rem, 7vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    line-height: .95;
+    line-height: 1;
   }
 
 
@@ -165,8 +174,8 @@ body::after {
   }
 
   .profile-img {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid rgba(212, 175, 55, .35);
@@ -357,12 +366,12 @@ body::after {
   }
 
   .section-area {
-    min-height: 80vh;
-    padding: 50px 0;
+    padding: 70px 0;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
   }
+
 
   .section-title {
     font-size: clamp(2.4rem, 5vw, 4.2rem);
@@ -676,125 +685,185 @@ body::after {
   .navbar-brand {
     color: #f1e2c0e7 !important;
   }
+
   @media (max-width: 992px) {
-  .section-area {
-    padding: 60px 0;
-    margin-bottom: 20px;
+    .section-area {
+      padding: 60px 0;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 2.7rem;
+    }
+
+    .profile-img {
+      width: 190px;
+      height: 190px;
+    }
+
+    .carousel-item img {
+      height: 380px !important;
+      max-height: 380px;
+    }
+
+    .carousel-caption {
+      position: static;
+      transform: none;
+      margin: 18px auto 0;
+      max-width: 100%;
+    }
+
+    .creative-gallery-pro {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .art-main {
+      grid-column: span 2;
+      grid-row: auto;
+    }
+
+    .art-preview {
+      height: 230px;
+    }
   }
 
-  .hero-art {
-    padding: 32px 22px !important;
+  @media (max-width: 576px) {
+    main.container {
+      padding-inline: 18px;
+    }
+
+    .navbar-brand {
+      font-size: 1.4rem;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.2;
+    }
+
+    .hero-text {
+      font-size: 1rem;
+    }
+
+    hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .section-title,
+    .creative-heading,
+    .cta-title {
+      font-size: 1.8rem;
+    }
+
+    .skill-category-card,
+    .art-card,
+    .curriculo-card,
+    .cta-card {
+      padding: 22px !important;
+      border-radius: 24px !important;
+    }
+
+    .badge {
+      font-size: .8rem;
+      padding: 7px 11px !important;
+    }
+
+    .carousel-item img {
+      height: 260px !important;
+      max-height: 260px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 42px;
+    }
+
+    .carousel-arrow,
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    .creative-gallery-pro {
+      grid-template-columns: 1fr;
+    }
+
+    .art-main {
+      grid-column: auto;
+    }
+
+    .art-preview {
+      height: 260px;
+    }
+
+    .footer-social,
+    .footer-links {
+      justify-content: center;
+    }
   }
 
-  .hero-title {
-    font-size: 2.7rem;
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1180px;
+    }
+
+    .hero-art {
+      min-height: 680px;
+      padding: 70px !important;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .profile-img {
+      width: 280px;
+      height: 280px;
+    }
+
+    .section-area {
+      padding: 80px 0;
+    }
+
+    .creative-gallery-pro {
+      grid-template-rows: 220px 220px;
+    }
+
+    .art-preview {
+      min-height: 220px;
+    }
   }
 
-  .profile-img {
-    width: 190px;
-    height: 190px;
+  @media (min-width: 1800px) {
+    .container {
+      max-width: 1280px;
+    }
+
+    .hero-art {
+      min-height: 720px;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .creative-gallery-pro {
+      grid-template-rows: 250px 250px;
+    }
   }
 
-  .carousel-item img {
-    height: 380px !important;
-    max-height: 380px;
+  .about-section .row {
+    align-items: flex-start !important;
   }
-
-  .carousel-caption {
-    position: static;
-    transform: none;
-    margin: 18px auto 0;
-    max-width: 100%;
-  }
-
-  .creative-gallery-pro {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-
-  .art-main {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-
-  .art-preview {
-    height: 230px;
-  }
-}
-
-@media (max-width: 576px) {
-  main.container {
-    padding-inline: 18px;
-  }
-
-  .navbar-brand {
-    font-size: 1.4rem;
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .section-title,
-  .creative-heading,
-  .cta-title {
-    font-size: 2rem;
-  }
-
-  .skill-category-card,
-  .art-card,
-  .curriculo-card,
-  .cta-card {
-    padding: 22px !important;
-    border-radius: 24px !important;
-  }
-
-  .badge {
-    font-size: .8rem;
-    padding: 7px 11px !important;
-  }
-
-  .carousel-item img {
-    height: 260px !important;
-    max-height: 260px;
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 42px;
-  }
-
-  .carousel-arrow,
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 42px;
-    height: 42px;
-  }
-
-  .creative-gallery-pro {
-    grid-template-columns: 1fr;
-  }
-
-  .art-main {
-    grid-column: auto;
-  }
-
-  .art-preview {
-    height: 260px;
-  }
-
-  .footer-social,
-  .footer-links {
-    justify-content: center;
-  }
-}
 </style>
 
 <body class="d-flex flex-column min-vh-100">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="/index.html">GS</a>
+      <a class="navbar-brand fw-bold" href="index.html">GS</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
@@ -803,7 +872,7 @@ body::after {
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
-            <a class="nav-link active" href="/index.html">Home</a>
+            <a class="nav-link active" href="index.html">Home</a>
           </li>
 
           <li class="nav-item">
@@ -811,11 +880,11 @@ body::after {
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/portfolio.html">Projetos</a>
+            <a class="nav-link" href="portfolio.html">Projetos</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/contato.html">Contato</a>
+            <a class="nav-link" href="contato.html">Contato</a>
           </li>
 
           <li class="nav-item ms-lg-3">
@@ -846,22 +915,23 @@ body::after {
             Gabrielly Santos de Oliveira
           </h1>
 
-          <h3 class="mt-4 fw-bold">
-            Estudante de ADS |
+          <h3 class="mt-4 fw-bold hero-subtitle">
+            Estudante de Técnico em<br>
+            Desenvolvimento de Sistemas |
             <span class="typing-text"></span><span class="cursor">|</span>
           </h3>
 
           <p class="lead hero-text mt-4">
-            Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web,
+            Sou estudante do Técnico de Desenvolvimento de Sistemas, com interesse em desenvolvimento web,
             UX/UI Design e criação de interfaces funcionais, intuitivas e bem estruturadas.
           </p>
 
           <div class="d-flex gap-3 mt-4 flex-wrap">
-            <a href="/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-4">
+            <a href="portfolio.html" class="btn btn-primary btn-lg rounded-pill px-4">
               Ver Projetos
             </a>
 
-            <a href="/contato.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
+            <a href="contato.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
               Contato
             </a>
           </div>
@@ -869,7 +939,7 @@ body::after {
 
         <div class="col-lg-5 text-center">
           <div class="profile-frame">
-            <img src="/imagens/eu.jpg" class="img-fluid profile-img" alt="Foto de perfil">
+            <img src="imagens/eu.jpg" class="img-fluid profile-img" alt="Foto de perfil">
           </div>
         </div>
 
@@ -904,12 +974,20 @@ body::after {
                     <div class="accordion-body">
                       <h5 class="fw-bold">Aprendiz em Logística — CAIO</h5>
 
+                      <p class="text-muted mb-2">
+                        2023 – 2024
+                      </p>
+
                       <p class="text-muted">
                         Atuei por 2 anos na área de logística, realizando controle de materiais,
-                        registros em sistema e análise de inconsistências.
+                        registros em sistema, organização de informações e análise de inconsistências.
                       </p>
 
                       <h5 class="fw-bold mt-4">Registro Empregatício — Usina São Manuel SA</h5>
+
+                      <p class="text-muted mb-2">
+                        2025 – Atual
+                      </p>
 
                       <ul class="text-muted mb-0">
                         <li>Comprovação de assiduidade</li>
@@ -932,7 +1010,7 @@ body::after {
 
                   <div id="formacao" class="accordion-collapse collapse" data-bs-parent="#accordionCurriculo">
                     <div class="accordion-body">
-                      <h5 class="fw-bold">Técnico em Análise e Desenvolvimento de Sistemas</h5>
+                      <h5 class="fw-bold">Técnico em Desenvolvimento de Sistemas</h5>
 
                       <p class="text-muted">SENAI — Em andamento</p>
 
@@ -942,6 +1020,18 @@ body::after {
                         <li>Front-end e back-end</li>
                         <li>Banco de dados</li>
                         <li>UX/UI Design</li>
+                      </ul>
+
+                      <h5 class="fw-bold mt-4">Curso de Inglês - Nível Básico</h5>
+
+                      <p class="text-muted">
+                        NovaMicroWay — 2018
+                      </p>
+
+                      <ul class="text-muted mb-0">
+                        <li>Leitura e interpretação de textos</li>
+                        <li>Vocabulário e comunicação</li>
+                        <li>Compreensão oral e escrita</li>
                       </ul>
                     </div>
                   </div>
@@ -966,13 +1056,13 @@ body::after {
                 </p>
 
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                  <a href="gabrielly_oliveira_curriculo.pdf" target="_blank"
+                  <a href="/gabrielly_oliveira_curriculo.pdf" target="_blank"
                     class="btn btn-outline-light rounded-pill">
                     <i class="bi bi-eye me-2"></i>
                     Visualizar
                   </a>
 
-                  <a href="gabrielly_oliveira_curriculo.pdf" download class="btn btn-primary rounded-pill">
+                  <a href="/gabrielly_oliveira_curriculo.pdf" download class="btn btn-primary rounded-pill">
                     <i class="bi bi-download me-2"></i>
                     Baixar PDF
                   </a>
@@ -1034,7 +1124,7 @@ body::after {
       </div>
     </section>
     <!-- SOBRE MIM + CRIATIVIDADE -->
-    <section id="sobre" class="section-area">
+    <section id="sobre" class="section-area about-section">
       <div class="row align-items-center g-5">
 
         <!-- LADO ESQUERDO: SOBRE MIM -->
@@ -1084,27 +1174,27 @@ body::after {
           <div class="creative-gallery-pro">
 
             <button class="art-preview art-main" data-bs-toggle="modal" data-bs-target="#modalArte1">
-              <img src="/imagens/desenho1.jpg" alt="Desenho feito à mão">
+              <img src="imagens/desenho1.jpg" alt="Desenho feito à mão">
               <span>Visualizar obra</span>
             </button>
 
             <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte2">
-              <img src="/imagens/desenho2.jpg" alt="Desenho feito à mão">
+              <img src="imagens/desenho2.jpg" alt="Desenho feito à mão">
               <span>Visualizar obra</span>
             </button>
 
             <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte3">
-              <img src="/imagens/desenho3.jpg" alt="Desenho feito à mão">
+              <img src="imagens/desenho3.jpg" alt="Desenho feito à mão">
               <span>Visualizar obra</span>
             </button>
 
             <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte4">
-              <img src="/imagens/desenho4.jpg" alt="Desenho feito à mão">
+              <img src="imagens/desenho4.jpg" alt="Desenho feito à mão">
               <span>Visualizar obra</span>
             </button>
 
             <button class="art-preview" data-bs-toggle="modal" data-bs-target="#modalArte5">
-              <img src="/imagens/desenho5.jpg" alt="Desenho feito à mão">
+              <img src="imagens/desenho5.jpg" alt="Desenho feito à mão">
               <span>Visualizar obra</span>
             </button>
 
@@ -1129,10 +1219,10 @@ body::after {
 
         <p class="cta-text">
           Explore aplicações web, sistemas acadêmicos, projetos de UX/UI Design
-          e soluções desenvolvidas durante minha formação em Análise e Desenvolvimento de Sistemas.
+          e soluções desenvolvidas durante minha formação em Desenvolvimento de Sistemas.
         </p>
 
-        <a href="/portfolio.html" class="btn btn-primary btn-lg rounded-pill px-5">
+        <a href="portfolio.html" class="btn btn-primary btn-lg rounded-pill px-5">
 
           Ver Portfólio
           <i class="bi bi-arrow-right ms-2"></i>
@@ -1147,7 +1237,7 @@ body::after {
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content art-modal">
           <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
-          <img src="/imagens/desenho1.jpg" alt="Desenho ampliado">
+          <img src="imagens/desenho1.jpg" alt="Desenho ampliado">
         </div>
       </div>
     </div>
@@ -1156,7 +1246,7 @@ body::after {
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content art-modal">
           <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
-          <img src="/imagens/desenho2.jpg" alt="Desenho ampliado">
+          <img src="imagens/desenho2.jpg" alt="Desenho ampliado">
         </div>
       </div>
     </div>
@@ -1165,7 +1255,7 @@ body::after {
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content art-modal">
           <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
-          <img src="/imagens/desenho3.jpg" alt="Desenho ampliado">
+          <img src="imagens/desenho3.jpg" alt="Desenho ampliado">
         </div>
       </div>
     </div>
@@ -1173,7 +1263,7 @@ body::after {
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content art-modal">
           <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
-          <img src="/imagens/desenho4.jpg" alt="Desenho ampliado">
+          <img src="imagens/desenho4.jpg" alt="Desenho ampliado">
         </div>
       </div>
     </div>
@@ -1181,7 +1271,7 @@ body::after {
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content art-modal">
           <button type="button" class="btn-close btn-close-white ms-auto m-3" data-bs-dismiss="modal"></button>
-          <img src="/imagens/desenho5.jpg" alt="Desenho ampliado">
+          <img src="imagens/desenho5.jpg" alt="Desenho ampliado">
         </div>
       </div>
     </div>
@@ -1280,14 +1370,23 @@ body::after {
       history.scrollRestoration = "manual";
     }
 
-    window.addEventListener("beforeunload", function () {
-      window.scrollTo(0, 0);
-    });
-
     window.addEventListener("load", function () {
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
+      const veioDeOutraPagina = document.referrer && !document.referrer.includes("index.html");
+
+      if (window.location.hash && veioDeOutraPagina) {
+        const destino = document.querySelector(window.location.hash);
+
+        if (destino) {
+          setTimeout(function () {
+            destino.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+
+        return;
       }
+
+      history.replaceState(null, null, window.location.pathname);
+      window.scrollTo(0, 0);
     });
   </script>
 </body>
