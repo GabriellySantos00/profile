@@ -117,9 +117,10 @@ body::after {
     font-weight: 400;
     font-family: "Inter", sans-serif;
 }
+
 .hero-intro {
-  color: #d8bc7b;
-   font-weight: 400;
+    color: #d8bc7b;
+    font-weight: 400;
 }
 
 .hero-art::after {
@@ -712,6 +713,24 @@ body::after {
 @media (max-width: 576px) {
     main.container {
         padding-inline: 20px;
+    }
+
+    .art-card {
+        backdrop-filter: none !important;
+         transition: none !important;
+    }
+
+    .skill-category-card {
+        backdrop-filter: none !important;
+         transition: none !important;
+    }
+
+    .cta-card {
+        backdrop-filter: none !important;
+    }
+
+    .accordion-collapse {
+        transition: height 0.2s ease !important;
     }
 
     .hero-intro {
