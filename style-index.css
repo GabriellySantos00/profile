@@ -735,7 +735,11 @@ body::after {
     }
 
     .navbar-collapse {
-        transition: height 0.2s ease !important;
+        transition: none !important;
+    }
+
+    .navbar-collapse.collapsing {
+        transition: none !important;
     }
 
     .accordion-collapse {
