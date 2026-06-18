@@ -59,3 +59,9 @@ window.addEventListener("load", function () {
     history.replaceState(null, null, window.location.pathname);
     window.scrollTo(0, 0);
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js")
+    .then(() => console.log("Service Worker registrado"))
+    .catch((err) => console.log("Erro ao registrar SW:", err));
+}
