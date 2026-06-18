@@ -712,9 +712,8 @@ body::after {
 
 @media (max-width: 576px) {
 
-    * {
-        animation: none !important;
-        transition: none !important;
+    .accordion-item {
+        scroll-margin-top: 20px;
     }
 
     main.container {
