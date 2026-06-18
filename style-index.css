@@ -107,6 +107,7 @@ body::after {
     font-size: 1.57rem;
 }
 
+
 .hero-text {
     font-size: 1.2rem;
 }
@@ -115,6 +116,10 @@ body::after {
     color: #d8bc7b !important;
     font-weight: 400;
     font-family: "Inter", sans-serif;
+}
+.hero-intro {
+  color: #d8bc7b;
+   font-weight: 400;
 }
 
 .hero-art::after {
@@ -142,7 +147,8 @@ body::after {
 
 .hero-title {
     color: #ffffff;
-    font-size: clamp(2rem, 4vw, 2.6rem) !important; ;
+    font-size: clamp(2rem, 4vw, 2.6rem) !important;
+    ;
     font-weight: 800;
     line-height: 1;
 }
@@ -512,6 +518,7 @@ body::after {
     filter: contrast(1.05) brightness(.88);
 }
 
+
 .art-preview::after {
     content: "";
     position: absolute;
@@ -707,9 +714,9 @@ body::after {
         padding-inline: 20px;
     }
 
-    .lead {
-        color: #ffffff !important;
-        font-weight: 300;
+    .hero-intro {
+
+        font-weight: 440;
         font-family: "Inter", sans-serif;
         font-size: 0.9rem !important;
     }
