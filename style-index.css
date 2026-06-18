@@ -711,18 +711,24 @@ body::after {
 }
 
 @media (max-width: 576px) {
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
     main.container {
         padding-inline: 20px;
     }
 
     .art-card {
         backdrop-filter: none !important;
-         transition: none !important;
+        transition: none !important;
     }
 
     .skill-category-card {
         backdrop-filter: none !important;
-         transition: none !important;
+        transition: none !important;
     }
 
     .cta-card {
@@ -730,7 +736,7 @@ body::after {
     }
 
     .accordion-collapse {
-        transition: height 0.2s ease !important;
+        transition: none !important;
     }
 
     .hero-intro {
