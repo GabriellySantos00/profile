@@ -734,6 +734,10 @@ body::after {
         backdrop-filter: none !important;
     }
 
+    .navbar-collapse {
+        transition: height 0.2s ease !important;
+    }
+
     .accordion-collapse {
         transition: none !important;
     }
