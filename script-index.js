@@ -1,7 +1,7 @@
 const palavras = [
-    "Desenvolvedora Front-end",
+    "Dev Front-end",
     "UX/UI Designer",
-    "Desenvolvedora Web"
+    "Web Developer"
 ];
 
 let palavraIndex = 0;
