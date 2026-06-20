@@ -372,8 +372,9 @@ body::after {
 
 .typing-text {
     color: #d8bc7b;
-    /* display: inline-block;
-    white-space: nowrap; */
+    display: inline-block;
+    min-width: 24ch;
+    white-space: nowrap;
 }
 
 .cursor {
