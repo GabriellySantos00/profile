@@ -373,7 +373,6 @@ body::after {
 .typing-text {
     color: #d8bc7b;
     display: inline-block;
-    min-width: 24ch;
     white-space: nowrap;
 }
 
@@ -775,7 +774,7 @@ body::after {
 
     .hero-subtitle {
         font-size: 1.25rem;
-        min-height: 2.5rem;
+        min-height: 4.5rem;
         line-height: 1.2;
     }
 
