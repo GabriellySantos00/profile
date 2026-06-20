@@ -14,7 +14,7 @@ O objetivo deste portfólio é apresentar um pouco da minha trajetória na área
 
 ## Acessar
 
-🔗 **https://gabrielly-codes.netlify.app/**
+🔗 **https://gsantos-dev.vercel.app**
 
 ## Autora
 
