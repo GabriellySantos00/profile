@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js")
+  navigator.serviceWorker.register("/js/sw.js")
     .then(() => console.log("Service Worker registrado"))
     .catch((err) => console.log("Erro ao registrar SW:", err));
 }
